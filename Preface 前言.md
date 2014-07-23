@@ -7,3 +7,4 @@ Preface 前言
 
 
 **译者注：**如发现中文翻译勘误欢迎指正，[点此](https://github.com/waylau/Jersey-2.10.1-User-Guide/issues)。
+本文所有例子的源码，可以在[https://github.com/waylau/Jersey-2.10.1-User-Guide-Demos](https://github.com/waylau/Jersey-2.10.1-User-Guide-Demos) 获取到。
