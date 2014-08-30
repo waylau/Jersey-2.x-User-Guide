@@ -1,0 +1,7 @@
+2.4. List of modules 模块列表
+========================
+
+下面的章节提供所有 Jersey 模块和与各自的二进制文件链接的依赖关系的概述（点击模块名称可以得到下载该模块的链接）。（*译者注*：下面的列表就不翻译了）
+
+<iframe frameborder="no" border="0" framespacing="0" src="https://jersey.java.net/documentation/latest/modules-and-dependencies.html#modules" width=776  height=2500 > 
+</iframe>
