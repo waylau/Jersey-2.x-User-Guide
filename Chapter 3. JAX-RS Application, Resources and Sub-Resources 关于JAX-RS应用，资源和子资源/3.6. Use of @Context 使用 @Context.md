@@ -1,0 +1,5 @@
+3.6. Use of @Context 使用 @Context
+========================
+
+前一部分介绍 [@Context](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/core/Context.html) 的使用。第5章描述了 JAX-RS 的所有标准的JAX-RS Java类型，可以使用 [@Context](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/core/Context.html)。
+当 JAX-RS 应用程序使用 servlet ,那么 [ServletConfig](http://docs.oracle.com/javaee/5/api/javax/servlet/ServletConfig.html) 、[ServletContext](http://docs.oracle.com/javaee/5/api/javax/servlet/ServletContext.html) 、[HttpServletRequest](http://docs.oracle.com/javaee/5/api/javax/servlet/http/HttpServletRequest.html) 和 [HttpServletResponse](http://docs.oracle.com/javaee/5/api/javax/servlet/http/HttpServletResponse.html)，是可用 [@Context](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/core/Context.html) 。
