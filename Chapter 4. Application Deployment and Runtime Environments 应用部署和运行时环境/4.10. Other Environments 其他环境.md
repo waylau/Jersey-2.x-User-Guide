@@ -1,0 +1,6 @@
+4.10. Other Environments 其他环境
+========================
+
+##4.10.1. Oracle Java Cloud Service 云服务
+
+Oracle 公共云是基于 WebLogic 服务器,同样,在文章中同样关于WebLogic 服务器部署(请参见[4.8.4.2 Oracle WebLogic Server](https://jersey.java.net/documentation/latest/user-guide.html#deployment.appservers.weblogic))。更多关于 Oracle Java 云服务,请看[指南](http://docs.oracle.com/cloud/131/developer_services/CSJSU/java-develop.htm#BABHDAJH)
