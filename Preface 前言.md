@@ -10,6 +10,6 @@ Preface 前言
 本文所有例子的源码，可以在[https://github.com/waylau/Jersey-2.x-User-Guide-Demos](https://github.com/waylau/Jersey-2.x-User-Guide-Demos) 获取到。
 
 ## 链接
-* [目录](../目录.md)
+* [目录](目录.md)
 * 上一节 无
 * [下一节 ](Chapter 1. Getting Started 开始/Chapter 1. Getting Started 开始.md)
