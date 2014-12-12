@@ -6,6 +6,6 @@ Chapter 1. Getting Started 开始
 *译者注*：本章所有例子的源码，可以在[https://github.com/waylau/Jersey-2.x-User-Guide-Demos](https://github.com/waylau/Jersey-2.x-User-Guide-Demos) 获取到。
 
 ## 链接
-	* [目录](../目录.md)
-	* 上一节 无
-	* [下一节 创建一个新项目](1.1. Creating a New Project from Maven Archetype 从Maven Archetype创建一个新项目.md)
+* [目录](../目录.md)
+* 上一节 无
+* [下一节 创建一个新项目](1.1. Creating a New Project from Maven Archetype 从Maven Archetype创建一个新项目.md)
