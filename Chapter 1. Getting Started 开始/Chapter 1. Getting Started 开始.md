@@ -7,5 +7,5 @@ Chapter 1. Getting Started 开始
 
 ## 链接
 * [目录](../目录.md)
-* 上一节 无
-* [下一节 创建一个新项目](1.1. Creating a New Project from Maven Archetype 从Maven Archetype创建一个新项目.md)
+* [上一节 前言](../Preface 前言.md)
+* [下一节 1.1 从Maven原型创建一个新项目](1.1. Creating a New Project from Maven Archetype 从Maven Archetype创建一个新项目.md)
