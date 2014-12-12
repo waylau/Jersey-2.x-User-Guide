@@ -7,3 +7,8 @@ Jersey 提供对 Spring DI 的扩展。使得 Jersey 在使用 Spring bean 时 �
 
 *局限性：
 Spring bean 不能被直接注射到 JAX-RS 类 ，通过 Spring XML 配置*
+
+## 链接
+* [目录](../目录.md)
+* [上一节 8.2 XML](../Chapter 8. Support for Common Media Type Representations 支持常用媒体类型/8.2. XML.md)
+* [下一节 22.1 依赖](22.1. Dependencies 依赖.md)
