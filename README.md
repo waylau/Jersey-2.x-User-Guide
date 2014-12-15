@@ -9,6 +9,7 @@ Jersey 2.x User Guide《Jersey 2.x 用户指南》 ，中文翻译。
 
 截止现在（2014-9-26）Jersey的最新版本为 [2.13](https://jersey.java.net/documentation/latest/user-guide.html)，利用业余时间对此进行翻译，并在原文的基础上，插入配图，图文并茂方便用户理解。如有勘误欢迎指正，[点此](https://github.com/waylau/Jersey-2.x-User-Guide/issues)。如有兴趣，也可以参与到本翻译工作中来 :)
 
+从[目录](目录.md)开始阅读吧！
 
 ###Contact:
 
