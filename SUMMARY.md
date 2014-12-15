@@ -1,3 +1,7 @@
+# Summary
+
+This is the summary of my book.
+
 * [前言](Preface 前言.md)
 * [第一章 开始](Chapter 1. Getting Started 开始/Chapter 1. Getting Started 开始.md)
 	- [1.1 从Maven原型创建一个新项目](Chapter 1. Getting Started 开始/1.1. Creating a New Project from Maven Archetype 从Maven Archetype创建一个新项目.md)
