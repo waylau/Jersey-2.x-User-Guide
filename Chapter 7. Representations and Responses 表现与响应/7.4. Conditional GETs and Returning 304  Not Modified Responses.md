@@ -1,0 +1,40 @@
+7.4. Conditional GETs and Returning 304 (Not Modified) Responses 条件 GET 和返回304响应
+==============
+
+条件 GET 是一个伟大的方式来减少带宽,并可能提高对服务器端性能,根据信息用于确定条件是如何计算出来的。一个设计良好的网站例如返回 304 (Not Modified) 响应给它提供的静态图像服务。
+
+JAX-RS 使用上下文接口[Request](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/core/Request.html)来提供对条件 GET 的支持。
+
+下面的例子显示了对条件 GET 的支持:
+
+Example 7.7. Conditional GET support
+
+	public SparklinesResource(
+	  @QueryParam("d") IntegerList data,
+	  @DefaultValue("0,100") @QueryParam("limits") Interval limits,
+	  @Context Request request,
+	  @Context UriInfo ui) {
+	  if (data == null) {
+	    throw new WebApplicationException(400);
+	  }
+	 
+	  this.data = data;
+	  this.limits = limits;
+	 
+	  if (!limits.contains(data)) {
+	    throw new WebApplicationException(400);
+	  }
+	 
+	  this.tag = computeEntityTag(ui.getRequestUri());
+	 
+	  if (request.getMethod().equals("GET")) {
+	    Response.ResponseBuilder rb = request.evaluatePreconditions(tag);
+	    if (rb != null) {
+	      throw new WebApplicationException(rb.build());
+	    }
+	  }
+	}
+
+SparklinesResouce 根资源类从请求 URI 计算实体的标签，然后调用带有实体标签的  [request.evaluatePreconditions](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/core/Request.html#evaluatePreconditions(javax.ws.rs.core.EntityTag))。如果客户端请求包含一个 If-None-Match 头值包含相同实体标签被计算，那么 evaluatePreconditions 返回一个预先填写 [evaluatepreconditions](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/core/Request.html#evaluatePreconditions(javax.ws.rs.core.EntityTag)) 响应，带着 304 状态代码和实体标签设置，可以建立和恢复。否则，[evaluatepreconditions](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/core/Request.html#evaluatePreconditions(javax.ws.rs.core.EntityTag)) 返回 null，正常的响应可以返回。
+
+注意，在这个例子中，一个资源类的构造函数是用来执行，否则可能被复制到每个资源的方法调用动作。资源类的生命周期是每个请求这意味着资源的实例为每个请求创建的，因此可以用请求参数，例如更改请求处理通过抛出异常，就像在这个例子所示。

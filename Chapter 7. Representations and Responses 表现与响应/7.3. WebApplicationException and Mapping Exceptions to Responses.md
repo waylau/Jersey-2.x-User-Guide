@@ -1,0 +1,59 @@
+7.3. WebApplicationException and Mapping Exceptions to Responses 异常
+==============
+
+前面提到的 HTTP 响应，都是编程构建的。可以使用相同的机制来返回 HTTP 错误，例如在 try-catch 块处理异常。然而，更好地与 Java 编程模型一致，JAX-RS 允许定义 Java 异常 到 HTTP 错误响应的直接映射。
+
+下面的示例演示了当 资源的方法返回一个错误的 HTTP 响应给客户端时，抛出 CustomNotFoundException ：
+
+Example 7.4. Throwing exceptions to control response
+
+	@Path("items/{itemid}/")
+	public Item getItem(@PathParam("itemid") String itemid) {
+	  Item i = getItems().get(itemid);
+	  if (i == null) {
+	    throw new CustomNotFoundException("Item, " + itemid + ", is not found");
+	  }
+	 
+	  return i;
+	}
+
+这是个 继承自 [WebApplicationException](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/WebApplicationException.html) 的具体异常应用，构建了一个 404 状态的 HTTP 响应和可选的消息作为响应的内容：
+
+Example 7.5. Application specific exception implementation
+
+	public class CustomNotFoundException extends WebApplicationException {
+	 
+	  /**
+	  * Create a HTTP 404 (Not Found) exception.
+	  */
+	  public CustomNotFoundException() {
+	    super(Responses.notFound().build());
+	  }
+	 
+	  /**
+	  * Create a HTTP 404 (Not Found) exception.
+	  * @param message the String that is the entity of the 404 response.
+	  */
+	  public CustomNotFoundException(String message) {
+	    super(Response.status(Responses.NOT_FOUND).
+	    entity(message).type("text/plain").build());
+	  }
+	}
+
+在其他情况下，它可能不适合把 [WebApplicationException](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/WebApplicationException.html)实例，或扩展了[WebApplicationException](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/WebApplicationException.html) 类的异常抛出，相反，它可能是可取的存在的异常响应 map 。对于这样的情况可以使用自定义异常映射提供者。供应者必须实现  [ExceptionMapper<E extends Throwable>](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/ext/ExceptionMapper.html) 接口 。例如，下面一个  [EntityNotFoundException](http://docs.oracle.com/javaee/5/api/javax/persistence/EntityNotFoundException.html) map 到 HTTP 404(Not Found) 的响应：
+
+Example 7.6. Mapping generic exceptions to responses
+
+	@Provider
+	public class EntityNotFoundMapper implements ExceptionMapper<javax.persistence.EntityNotFoundException> {
+	  public Response toResponse(javax.persistence.EntityNotFoundException ex) {
+	    return Response.status(404).
+	      entity(ex.getMessage()).
+	      type("text/plain").
+	      build();
+	  }
+	}
+
+上面的类使用了 [@Provider](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/ext/Provider.html) 注解,这个声明的类是 JAX-RS 运行时。这样的类可以被添加到配置了的 [Application](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/core/Application.html) 实例的类的集合中。当应用程序抛出一个 [EntityNotFoundException](http://docs.oracle.com/javaee/6/api/javax/persistence/EntityNotFoundException.html)时，EntityNotFoundMapper 实例的 toResponse 方法将被调用。
+
+Jersey 支持扩展映射器的异常。这些扩展映射器必须实现org.glassfish.jersey.spi。ExtendedExceptionMapper 接口。另外这个接口定义方法 isMappable(Throwable), 将被 Jersey 运行时调用当异常抛出并且这个供应者被认为是可映射基于异常类型。使用这种方法，异常的提供者可以拒绝异常映射在方法 toResponse 被调用之前。提供者可以例如检查异常参数,基于他们返回 false,和让其他供应者选择异常映射。

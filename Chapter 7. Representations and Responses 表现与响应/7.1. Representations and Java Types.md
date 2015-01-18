@@ -1,0 +1,56 @@
+7.1. Representations and Java Types 表示与 Java 类型
+==============
+
+前面提到的[@Produces](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/Produces.html)和[@Consumes](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/Consumes.html)注解称为实体的媒体类型表示。上面的例子描述资源方法能够消耗和/或产生 String Java 类型的不同的媒体类型。这种方法很容易理解和相对简单对于应用于简单的用例来说。
+
+还涵盖其他情况下,处理 non-String（非文本）数据，例如处理数据存储在文件系统,等等, JAX-RS 实现也需要支持其他类型的媒体类型转换,non-String（非文本）,Java 类型都得到了利用。下面是一个简短的清单,开箱即用的支持 Java 类型的媒体类型:
+
+* 所有媒体类型 (*/*)
+	* byte[]
+	* java.lang.String
+	* java.io.Reader (inbound only)
+	* java.io.File
+	* javax.activation.DataSource
+	* javax.ws.rs.core.StreamingOutput (outbound only)
+* XML 媒体类型 (text/xml, application/xml and application/...+xml)
+	* javax.xml.transform.Source
+	* javax.xml.bind.JAXBElement
+	* 应用了 JAXB 类的应用 (使用了 [@XmlRootElement](http://docs.oracle.com/javase/6/docs/api/javax/xml/bind/annotation/XmlRootElement.html) 或者 [@XmlType](http://docs.oracle.com/javase/6/docs/api/javax/xml/bind/annotation/XmlType.html) 的类型)
+* Form 表单内容 (application/x-www-form-urlencoded)
+	* MultivaluedMap<String,String>
+* 纯文本 (text/plain)
+	* java.lang.Boolean
+	* java.lang.Character
+	* java.lang.Number
+
+不同于方法参数与请求参数的提取相关联,方法参数与所消耗的表示相关联不需要注释。换句话说表示(实体)的参数不需要特定的“实体”注解。一个没有注解的方法参数就是一个实体。最大的一个这样的未注解的方法的参数可能存在自从有可能是最大的一个这样的表示在请求时发送。
+
+产生的表示对应于资源方法返回的是什么。例如 JAX-RS 使它简单的产生例图像文件实例，如下:
+
+Example 7.1. Using File with a specific media type to produce a response
+
+	@GET
+	@Path("/images/{image}")
+	@Produces("image/*")
+	public Response getImage(@PathParam("image") String image) {
+	  File f = new File(image);
+	 
+	  if (!f.exists()) {
+	    throw new WebApplicationException(404);
+	  }
+	 
+	  String mt = new MimetypesFileTypeMap().getContentType(f);
+	  return Response.ok(f, mt).build();
+	}
+
+文件类型同样适用于消耗一个表示（请求实体）。在这种情况下，临时文件将从传入的请求实体创建，并且作为参数传给资源的方法。
+
+Content-Type 响应头（如果没有设置编程方式，在下节介绍）将自动设置基于媒体类型通过  [@Produces](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/Produces.html) 声明。例如下面的方法，当允许多个输出媒体类型时，最可接受的媒体类型被使用：
+
+	@GET
+	@Produces({"application/xml", "application/json"})
+	public String doGetAsXmlOrJson() {
+	  ...
+	}
+
+ 如果 `application/xml` 是最可接受的媒体类型定义在请求中（例如，如头 Accept: application/xml），则 响应头 Content-Type 将被设为 `application/xml`

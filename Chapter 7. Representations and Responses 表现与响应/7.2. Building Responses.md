@@ -1,0 +1,28 @@
+7.2. Building Responses 构建响应
+==============
+
+有时有必要返回响应 HTTP 请求的额外信息。这些信息可能是使用 [Response](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/core/Response.html) 和 [Response.ResponseBuilder](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/core/Response.ResponseBuilder.html) 来构建并返回。例如,一个常见的RESTful 模式创建一个新的资源是支持一个 POST 请求,返回一个 201(Created)状态码和其值是新创建的资源的 URI 的 Location header 。可能实现如下:
+
+Example 7.2. Returning 201 status code and adding Location header in response to POST request
+
+	@POST
+	@Consumes("application/xml")
+	public Response post(String content) {
+	  URI createdUri = ...
+	  create(content);
+	  return Response.created(createdUri).build();
+	}
+
+在上面没有返回产生的表示，这可以通过建立一个实体作为响应的一部分来实现：
+
+Example 7.3. Adding an entity body to a custom response
+
+	@POST
+	@Consumes("application/xml")
+	public Response post(String content) {
+	  URI createdUri = ...
+	  String createdContent = create(content);
+	  return Response.created(createdUri).entity(Entity.text(createdContent)).build();
+	}
+
+响应构建提供其他功能，如设置实体标签和最后修改日期的表示。
