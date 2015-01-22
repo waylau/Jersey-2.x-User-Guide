@@ -17,7 +17,7 @@ This is the summary of my book.
 	- [2.4 模块列表](Chapter 2. Modules and dependencies 模块和依赖/2.4. List of modules 模块列表.md)
 * [第3章 关于JAX-RS应用，资源和子资源](Chapter 3. JAX-RS Application, Resources and Sub-Resources 关于JAX-RS应用，资源和子资源/Chapter 3. JAX-RS Application, Resources and Sub-Resources 关于JAX-RS应用，资源和子资源.md)
 	- [3.1 根资源类](Chapter 3. JAX-RS Application, Resources and Sub-Resources 关于JAX-RS应用，资源和子资源/3.1. Root Resource Classes 根资源类.md)
-	- [3.2 (@*Param)参数注解](Chapter 3. JAX-RS Application, Resources and Sub-Resources 关于JAX-RS应用，资源和子资源/3.2. Parameter Annotations (@Param) 参数注解.md)
+	- [3.2 (@*Param)参数注解](Chapter 3. JAX-RS Application, Resources and Sub-Resources 关于JAX-RS应用，资源和子资源/3.2. Parameter Annotations @Param 参数注解.md)
 	- [3.3 子资源](Chapter 3. JAX-RS Application, Resources and Sub-Resources 关于JAX-RS应用，资源和子资源/3.3. Sub-resources 子资源.md)
 	- [3.4 根资源类生命周期](Chapter 3. JAX-RS Application, Resources and Sub-Resources 关于JAX-RS应用，资源和子资源/3.4. Life-cycle of Root Resource Classes 根资源类生命周期.md)
 	- [3.5 注入规则](Chapter 3. JAX-RS Application, Resources and Sub-Resources 关于JAX-RS应用，资源和子资源/3.5. Rules of Injection 注入规则.md)
