@@ -18,8 +18,3 @@ JAX-RS 客户端 API 可以用来消费任何暴露的 HTTP 协议或它的扩�
 3.有共同的概念和 JAX-RS API的扩展点之间的服务器和客户端编程模型。
 
 作为标准 JAX-RS 客户端 API 扩展,Jersey 客户端 API 支持可插拔的体系结构允许使用不同的底层实现 HTTP 客户端[连接器](https://jersey.java.net/apidocs/2.13/jersey/org/glassfish/jersey/client/spi/Connector.html)。几个这样的实现目前 都由 Jersey 提供。我们有一个默认客户端连接器使用Http(s)URLConnection提供JDK以及连接器实现基于Apache Http客户机,Jetty Http 客户端和 Grizzly  异步客户端。
-
-## 链接
-* [目录](../目录.md)
-* [上一节 4.10 其他环境](../Chapter 4. Application Deployment and Runtime Environments 应用部署和运行时环境/4.10. Other Environments 其他环境.md)
-* [下一节 5.1 统一接口约束](5.1. Uniform Interface Constraint 统一接口约束.md)
