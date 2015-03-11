@@ -1,0 +1,21 @@
+20.1. Viewable
+==============
+
+为了让资源的方法显式地返回对于一个视图模板和数据模型被使用的引用。为此，Jersey 1 引入了[ Viewable ](https://jersey.java.net/apidocs/2.16/jersey/org/glassfish/jersey/server/mvc/Viewable.html)类，目前也存在于（不同的包下）Jersey 2。见下面 一个简单的例子， Example 20.1, “Using Viewable in a resource class”
+
+Example 20.1. Using Viewable in a resource class
+
+	package com.example;
+	 
+	@Path("foo")
+	public class Foo {
+	 
+	    @GET
+	    public Viewable get() {
+	        return new Viewable("index.foo", "FOO");
+	    }
+	}
+
+在这个例子中，foo JAX-RS 资源类是控制器，Viewable 实例提供的数据模型（FOO 字符串）和引用装载进与之关联的视图模板（index.foo）里。
+
+*提示：所有的 HTTP 方法都可以返回 Viewable 实例 。因此，POST 方法可能会返回一个模板引用的模板，产生一个 HTML Form 表单的视图*
