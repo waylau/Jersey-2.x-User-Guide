@@ -3,7 +3,7 @@ Jersey-2.x-User-Guide
 
 ![logo](http://i1288.photobucket.com/albums/b484/waylau/waylau%20blog/Jersey-2-User-Guide/jersey_logo_zps044c9b5c.png)
 
-Chinese translation of [Jersey 2.x User Guide](https://jersey.java.net/documentation/latest/user-guide.html).This is also a GitBook version of the book: [http://www.gitbook.com/book/waylau/jersey-2-user-guide](http://www.gitbook.com/book/waylau/jersey-2-user-guide).
+Chinese translation of [Jersey 2.x User Guide](https://jersey.java.net/documentation/latest/user-guide.html).There is also a GitBook version of the book: [http://www.gitbook.com/book/waylau/jersey-2-user-guide](http://www.gitbook.com/book/waylau/jersey-2-user-guide).
 Let's [RESD](SUMMARY.md)!
 
 《Jersey 2.x 用户指南》 ，中文翻译。
@@ -11,7 +11,7 @@ Let's [RESD](SUMMARY.md)!
 
 文本用到的所有例子源码可以在[https://github.com/waylau/Jersey-2.x-User-Guide-Demos](https://github.com/waylau/Jersey-2.x-User-Guide-Demos) 获取到。
 
-截止现在（2015-2-11）Jersey的最新版本为 [2.16](https://jersey.java.net/documentation/latest/user-guide.html)，利用业余时间对此进行翻译，并在原文的基础上，插入配图，图文并茂方便用户理解。如有勘误欢迎指正，[点此](https://github.com/waylau/Jersey-2.x-User-Guide/issues)。如有兴趣，也可以参与到本翻译工作中来 :)
+截止现在（2015-3-16）Jersey的最新版本为 [2.17](https://jersey.java.net/documentation/latest/user-guide.html)，利用业余时间对此进行翻译，并在原文的基础上，插入配图，图文并茂方便用户理解。如有勘误欢迎指正，[点此](https://github.com/waylau/Jersey-2.x-User-Guide/issues)。如有兴趣，也可以参与到本翻译工作中来 :)
 另外有 GitBook 的版本方便阅读[http://www.gitbook.com/book/waylau/jersey-2-user-guide](http://www.gitbook.com/book/waylau/jersey-2-user-guide)
 
 从[目录](SUMMARY.md)开始阅读吧！
