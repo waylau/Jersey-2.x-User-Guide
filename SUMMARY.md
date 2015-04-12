@@ -58,7 +58,7 @@ This is the summary of my book.
 * [第20章 MVC 模板](Chapter 20. MVC Templates/Chapter 20. MVC Templates.md)
 	- [20.1. Viewable](Chapter 20. MVC Templates/20.1. Viewable.md)
 	- [20.2. 模板](Chapter 20. MVC Templates/20.2. Template.md)
-	- [20.3. 绝对、相对模板引用](Chapter 20. MVC Templates/20.3. Absolute vs. Relative template reference.md)
+	- [20.3. 绝对 vs. 相对模块引用](Chapter 20. MVC Templates/20.3. Absolute vs. Relative template reference.md)
 	- [20.4. MVC 错误处理](Chapter 20. MVC Templates/20.4. Handling errors with MVC.md)
 	- [20.5. 注册和配置](Chapter 20. MVC Templates/20.5. Registration and Configuration.md)
 	- [20.6. 支持的模板引擎](Chapter 20. MVC Templates/20.6. Supported templating engines.md)
