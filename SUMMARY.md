@@ -55,6 +55,12 @@ This is the summary of my book.
 	- [9.3 Multipart](Chapter 9. Support for Common Media Type Representations 支持常用媒体类型/9.3. Multipart.md)
 * [第10章 过滤器和拦截器](Chapter 10. Filters and Interceptors 过滤器和拦截器/Chapter 10. Filters and Interceptors 过滤器和拦截器.md)
 * [第11章 异步服务器和客户端](Chapter 11. Asynchronous Services and Clients 异步服务器和客户端/Chapter 11. Asynchronous Services and Clients 异步服务器和客户端.md)
+* 第15章 Server-Sent Events (SSE) 支持
+	- [15.1. 什么是 SSE](Chapter 15. Server-Sent Events (SSE) Support/15.1. What are Server-Sent Events.md)
+	- [15.2. 何时 SSE](Chapter 15. Server-Sent Events (SSE) Support/15.2. When to use Server-Sent Events.md)
+	- [15.3. 什么是 SSE](Chapter 15. Server-Sent Events (SSE) Support/15.3. Jersey Server-Sent Events API.md)
+	- [15.4. Jersey SSE 中的API](Chapter 15. Server-Sent Events (SSE) Support/15.4. Implementing SSE support in a JAX-RS resource.md)
+	- [15.5. Jersey 客户端使用 SSE](Chapter 15. Server-Sent Events (SSE) Support/15.5. Consuming SSE events with Jersey clients.md)
 * [第20章 MVC 模板](Chapter 20. MVC Templates/Chapter 20. MVC Templates.md)
 	- [20.1. Viewable](Chapter 20. MVC Templates/20.1. Viewable.md)
 	- [20.2. 模板](Chapter 20. MVC Templates/20.2. Template.md)
