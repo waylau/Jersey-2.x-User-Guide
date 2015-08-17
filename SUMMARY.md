@@ -58,8 +58,8 @@ This is the summary of my book.
 * 第15章 Server-Sent Events (SSE) 支持
 	- [15.1. 什么是 SSE](Chapter 15. Server-Sent Events (SSE) Support/15.1. What are Server-Sent Events.md)
 	- [15.2. 何时用 SSE](Chapter 15. Server-Sent Events (SSE) Support/15.2. When to use Server-Sent Events.md)
-	- [15.3. 什么是 SSE](Chapter 15. Server-Sent Events (SSE) Support/15.3. Jersey Server-Sent Events API.md)
-	- [15.4. Jersey SSE 中的API](Chapter 15. Server-Sent Events (SSE) Support/15.4. Implementing SSE support in a JAX-RS resource.md)
+	- [15.3. Jersey Server-Sent Events API](Chapter 15. Server-Sent Events (SSE) Support/15.3. Jersey Server-Sent Events API.md)
+	- [15.4. 在 JAX-RS 资源中实现 SSE](Chapter 15. Server-Sent Events (SSE) Support/15.4. Implementing SSE support in a JAX-RS resource.md)
 	- [15.5. Jersey 客户端使用 SSE](Chapter 15. Server-Sent Events (SSE) Support/15.5. Consuming SSE events with Jersey clients.md)
 * [第20章 MVC 模板](Chapter 20. MVC Templates/Chapter 20. MVC Templates.md)
 	- [20.1. Viewable](Chapter 20. MVC Templates/20.1. Viewable.md)
