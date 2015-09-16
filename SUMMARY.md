@@ -28,7 +28,7 @@ This is the summary of my book.
 	- [4.2 JAX-RS 应用模型](Chapter 4. Application Deployment and Runtime Environments 应用部署和运行时环境/4.2. JAX-RS Application Model 应用模型.md)
 	- [4.3 自动发现的特性](Chapter 4. Application Deployment and Runtime Environments 应用部署和运行时环境/4.3. Auto-Discoverable Features 自动发现的特性.md)
 	- [4.4 配置 Classpath 扫描](Chapter 4. Application Deployment and Runtime Environments 应用部署和运行时环境/4.4. Configuring the Classpath Scanning 配置 Classpath 扫描.md)
-	- [4.5 Java SE 部署环境](Chapter 4. Application Deployment and Runtime Environments 应用部署和运行时环境/4.5. Java SE Deployment Environments Java 部署环境.md)
+	- [4.5 部署在 Java SE 环境](Chapter 4. Application Deployment and Runtime Environments 应用部署和运行时环境/4.5. Java SE Deployment Environments Java 部署环境.md)
 	- [4.6 创建可编程的 JAX-RS 端点](Chapter 4. Application Deployment and Runtime Environments 应用部署和运行时环境/4.6. Creating programmatic JAX-RS endpoint 创建可编程的 JAX-RS 端点.md)
 	- [4.7 基于 Servlet 的部署](Chapter 4. Application Deployment and Runtime Environments 应用部署和运行时环境/4.7. Servlet-based Deployment 基于 Servlet 的部署.md)
 	- [4.8 Java EE 平台](Chapter 4. Application Deployment and Runtime Environments 应用部署和运行时环境/4.8. Java EE Platform 在 Java EE 平台.md)
